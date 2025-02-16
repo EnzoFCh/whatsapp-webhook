@@ -11,6 +11,10 @@ def verify():
         return challenge
     return "Error de verificación", 403
 
+@app.route('/', methods=['GET'])
+def home():
+    return "El servidor está funcionando correctamente."
+
 if name == 'main':
-    port = int(os.environ.get("PORT", 10000))  # Render asigna el puerto dinámicamente
+    port = int(os.environ.get("PORT", 10000))  # Render usa puertos dinámicos
     app.run(host="0.0.0.0", port=port)
